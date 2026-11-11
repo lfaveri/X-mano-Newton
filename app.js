@@ -67,6 +67,9 @@ const I={
  lupa:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" aria-hidden="true"><circle cx="10.500" cy="10.500" r="6"/><path d="m15 15 6 6M10.500 8v5M8 10.500h5"/></svg>'
 };
 const RAPOSA='icons/newton.png';
+/* Epígrafe da tela de abertura: escreva o texto entre as crases (uma linha por verso). Vazio = não aparece. */
+const EPIGRAFE=``;
+const EPIGRAFE_FONTE='';
 
 /* ===== guia (ruiva): rosto preservado, só recortado em círculo ===== */
 const G={
@@ -93,14 +96,18 @@ function topo(){return`<header class="topo"><button class="marca" data-act="ir" 
 <span class="chip fogo" title="Dias seguidos">${I.fogo}${streak()}</span><span class="chip xp" title="Pontos de experiência">${I.raio}${S.xp}</span></header>`}
 function nav(){const b=(t,ic,n)=>`<button data-act="ir" data-t="${t}" ${tela===t?'aria-current="page"':''}>${ic}${n}</button>`;
   return`<nav class="nav" aria-label="Menu principal">${b('trilha',I.trilha,'Trilha')}${b('prog',I.graf,'Progresso')}${b('sobre',I.info,'Sobre')}</nav>`}
-function logosApoio(){return`<img src="logos/seduc.png" alt="SEDUC – Secretaria de Estado de Educação, Governo de Mato Grosso"><img src="logos/secitec.png" alt="SECITECI – Secretaria de Estado de Ciência, Tecnologia e Inovação, Governo de Mato Grosso"><img class="dre" src="logos/dre.png" alt="DRE – Diretoria Regional de Educação de Primavera do Leste">`}
+function logosApoio(){return`<img src="logos/seduc.png" alt="SEDUC – Secretaria de Estado de Educação, Governo de Mato Grosso"><img class="pre" src="logos/pre-enem.png" alt="Pré-Enem Digit@l MT"><img class="dre" src="logos/dre.png" alt="DRE – Diretoria Regional de Educação de Primavera do Leste">`}
 
 function telaBoas(){return`<main class="boas"><img class="raposa" src="${RAPOSA}" alt="Xômano Newton, mascote do app">
 <h1>Xômano Newton</h1><p class="sub">Treinando a Física do ENEM</p>
 <div class="guia-card">${av('dica',84)}<p>Oi! Eu vou te acompanhar nas questões. Você começa pelas grandezas e o Sistema Internacional e, se travar em algum assunto, eu separo um reforço.</p></div>
 <label for="nome">Como podemos te chamar?</label><input id="nome" maxlength="24" autocomplete="given-name" placeholder="Seu nome ou apelido">
 <div style="width:100%;margin-top:16px"><button class="btn" data-act="comecar">Começar</button></div>
-<div class="apoio">${logosApoio()}</div></main>`}
+<div class="apoio">${logosApoio()}</div>
+${EPIGRAFE?`<blockquote class="epigrafe">${EPIGRAFE.trim().split('\n').map(l=>l.trim()).join('<br>')}${EPIGRAFE_FONTE?`<cite>${EPIGRAFE_FONTE}</cite>`:''}</blockquote>`:''}
+<p class="rodape-lic"><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt-br" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+<p class="rodape-presente">Um presente de <b>Laura de Faveri</b> e <b>Claudiana Cardoso</b> para nossa regional.</p>
+<p class="contador"><img src="https://hits.sh/lfaveri.github.io/X-mano-Newton.svg?label=acessos&color=00897b" alt="Contador de acessos" onerror="this.parentNode.style.display='none'"></p></main>`}
 
 function telaTrilha(){
   const a=atual(),feitas=Object.keys(S.licoes).length;
@@ -148,7 +155,7 @@ function telaSobre(){
   <div class="cartao" style="display:flex;gap:14px;align-items:center">${av('ceu',76)}<p style="margin:0"><b>Xômano Newton</b> é um simulado de Física com questões do ENEM, organizado em trilhas curtas. As questões crescem em dificuldade e, se você errar muito uma habilidade, entra um reforço de ${R.tamReforco} questões antes de voltar à trilha.</p></div>
   <h2>Como funciona</h2><ul><li>Cada lição tem de ${R.tamLicaoSI} a ${R.tamLicao+2} questões e você tem ${R.vidas} vidas.</li><li>Ao errar 2 das últimas 3 questões de uma mesma habilidade, ou 3 na mesma unidade, o app pausa a trilha e traz ${R.tamReforco} questões dessa habilidade.</li><li>Terminado o reforço, a trilha continua de onde parou.</li><li>O gabarito mostra só a letra certa. Peça a resolução ao seu professor.</li></ul>
   ${promptInstalar?'<div class="cartao"><button class="btn" data-act="instalar">Instalar o app neste aparelho</button></div>':`<h2>Instalar no celular</h2><p>${ios?'No iPhone: toque em Compartilhar e depois em “Adicionar à Tela de Início”.':'No Android: abra o menu do navegador e toque em “Instalar app” ou “Adicionar à tela inicial”.'} Depois de aberto uma vez, o app funciona sem internet.</p>`}
-  <h2>Apoio institucional</h2><div class="logos">${logosApoio()}</div><p class="nota">Projeto da Diretoria Regional de Educação de Primavera do Leste, com a SEDUC-MT e a SECITECI-MT.</p>
+  <h2>Apoio institucional</h2><div class="logos">${logosApoio()}</div><p class="nota">Projeto da Diretoria Regional de Educação de Primavera do Leste, com a SEDUC-MT e o Pré-Enem Digit@l MT.</p>
   <h2>Licença e créditos</h2><p class="nota">Código, trilha pedagógica, banco de questões originais (2026) e identidade visual sob licença <b>CC BY-NC 4.0</b>: pode compartilhar e adaptar com atribuição, <b>sem qualquer fim lucrativo</b>. As questões do ENEM pertencem ao INEP/MEC. Logotipos e ilustrações da guia não estão incluídos na licença.</p>
   <p class="nota">Versão 1.0 · ${D.questoes.length} questões · Raposa e identidade visual com as cores da DRE Primavera do Leste.</p></div>`;
 }
