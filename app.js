@@ -66,7 +66,7 @@ const I={
  info:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>',
  lupa:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" aria-hidden="true"><circle cx="10.500" cy="10.500" r="6"/><path d="m15 15 6 6M10.500 8v5M8 10.500h5"/></svg>'
 };
-const RAPOSA='icons/raposa.svg';
+const RAPOSA='icons/newton.png';
 
 /* ===== guia (ruiva): rosto preservado, só recortado em círculo ===== */
 const G={
@@ -95,7 +95,7 @@ function nav(){const b=(t,ic,n)=>`<button data-act="ir" data-t="${t}" ${tela===t
   return`<nav class="nav" aria-label="Menu principal">${b('trilha',I.trilha,'Trilha')}${b('prog',I.graf,'Progresso')}${b('sobre',I.info,'Sobre')}</nav>`}
 function logosApoio(){return`<img src="logos/seduc.png" alt="SEDUC – Secretaria de Estado de Educação, Governo de Mato Grosso"><img src="logos/secitec.png" alt="SECITECI – Secretaria de Estado de Ciência, Tecnologia e Inovação, Governo de Mato Grosso"><img class="dre" src="logos/dre.png" alt="DRE – Diretoria Regional de Educação de Primavera do Leste">`}
 
-function telaBoas(){return`<main class="boas"><img class="raposa" src="${RAPOSA}" alt="Raposa, símbolo do app">
+function telaBoas(){return`<main class="boas"><img class="raposa" src="${RAPOSA}" alt="Xômano Newton, mascote do app">
 <h1>Xômano Newton</h1><p class="sub">Treinando a Física do ENEM</p>
 <div class="guia-card">${av('dica',84)}<p>Oi! Eu vou te acompanhar nas questões. Você começa pelas grandezas e o Sistema Internacional e, se travar em algum assunto, eu separo um reforço.</p></div>
 <label for="nome">Como podemos te chamar?</label><input id="nome" maxlength="24" autocomplete="given-name" placeholder="Seu nome ou apelido">

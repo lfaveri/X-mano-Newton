@@ -25,7 +25,7 @@ Aplicativo de simulado de Física do ENEM em trilhas curtas, estilo "lições", 
 - **Android (Chrome):** abra o link, toque nos três pontinhos e em **Instalar app** (ou **Adicionar à tela inicial**).
 - **iPhone (Safari):** abra o link, toque em **Compartilhar** e depois em **Adicionar à Tela de Início**.
 
-Depois disso o ícone da raposa aparece na tela inicial e o app abre em tela cheia. Basta abrir o app uma vez com internet para ele funcionar offline.
+Depois disso o ícone do Xômano Newton aparece na tela inicial e o app abre em tela cheia. Basta abrir o app uma vez com internet para ele funcionar offline.
 
 ## Trocar de celular sem perder o progresso
 
