@@ -99,14 +99,13 @@ function nav(){const b=(t,ic,n)=>`<button data-act="ir" data-t="${t}" ${tela===t
 function logosApoio(){return`<img src="logos/seduc.png" alt="SEDUC – Secretaria de Estado de Educação, Governo de Mato Grosso"><img class="pre" src="logos/pre-enem.png" alt="Pré-Enem Digit@l MT"><img class="dre" src="logos/dre.png" alt="DRE – Diretoria Regional de Educação de Primavera do Leste">`}
 
 function telaBoas(){return`<main class="boas"><img class="raposa" src="${RAPOSA}" alt="Xômano Newton, mascote do app">
-<h1>Xômano Newton</h1><p class="sub">Treinando a Física do ENEM</p>
+<h1>Xômano Newton</h1><p class="sub">Treinando a Física do ENEM</p><p class="rodape-lic"><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt-br" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 <div class="guia-card">${av('dica',84)}<p>Oi! Eu vou te acompanhar nas questões. Você começa pelas grandezas e o Sistema Internacional e, se travar em algum assunto, eu separo um reforço.</p></div>
 <label for="nome">Como podemos te chamar?</label><input id="nome" maxlength="24" autocomplete="given-name" placeholder="Seu nome ou apelido">
 <div style="width:100%;margin-top:16px"><button class="btn" data-act="comecar">Começar</button></div>
 <div class="apoio">${logosApoio()}</div>
-${EPIGRAFE?`<blockquote class="epigrafe">${EPIGRAFE.trim().split('\n').map(l=>l.trim()).join('<br>')}${EPIGRAFE_FONTE?`<cite>${EPIGRAFE_FONTE}</cite>`:''}</blockquote>`:''}
-<p class="rodape-lic"><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt-br" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 <p class="rodape-presente">Um presente de <b>Laura de Faveri</b> e <b>Claudiana Cardoso</b> para nossa regional.</p>
+${EPIGRAFE?`<blockquote class="epigrafe">${EPIGRAFE.trim().split('\n').map(l=>l.trim()).join('<br>')}${EPIGRAFE_FONTE?`<cite>${EPIGRAFE_FONTE}</cite>`:''}</blockquote>`:''}
 <p class="contador"><img src="https://hits.sh/lfaveri.github.io/X-mano-Newton.svg?label=acessos&color=00897b" alt="Contador de acessos" onerror="this.parentNode.style.display='none'"></p></main>`}
 
 function telaTrilha(){

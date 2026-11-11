@@ -46,7 +46,7 @@ img{max-width:100%}
   linear-gradient(172deg,var(--teal) 0 370px,var(--paper) 370px)}
 .boas .raposa{width:160px;height:160px;border-radius:50%;margin-top:6px;filter:drop-shadow(0 6px 0 rgba(0,0,0,.12))}
 .boas h1{font-size:44px;line-height:1.05;margin:14px 0 4px;color:#fff;letter-spacing:-.5px}
-.boas .sub{color:#fff;font-weight:700;margin:0 0 40px;font-size:20px}
+.boas .sub{color:#fff;font-weight:700;margin:0 0 6px;font-size:20px}
 .boas .guia-card{background:var(--card);border-radius:20px;padding:16px;display:flex;gap:14px;align-items:center;text-align:left;box-shadow:0 4px 0 var(--line);margin-top:auto;width:100%}
 .boas .guia-card p{margin:0;font-size:20px}
 .boas label{display:block;text-align:left;width:100%;font-weight:500;font-size:18px;margin:18px 0 6px}
@@ -204,3 +204,11 @@ textarea.cod{width:100%;min-height:90px;font:12px/1.4 ui-monospace,Menlo,Consola
 .rodape-lic{margin:18px 0 0;font-size:16px;font-weight:700}
 .rodape-presente{margin:8px 0 0;font-size:17px;text-align:center}
 .contador{margin:10px 0 0}.contador img{height:24px}
+.boas .rodape-lic{margin:0 0 34px}
+.boas .rodape-lic a{display:inline-block;background:#fff;color:var(--teal-dd);padding:3px 12px;border-radius:8px;font-size:15px}
+.boas .apoio{flex-wrap:nowrap;gap:8px}
+.boas .apoio img{height:40px;max-width:32%;object-fit:contain}
+.boas .apoio img.pre,.boas .apoio img.dre{height:48px;padding:3px 5px}
+.epigrafe{text-align:center;font-weight:700;font-style:normal;font-size:16px;border-left:0}
+.epigrafe cite{font-weight:700}
+.contador{margin:16px 0 0}
