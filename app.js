@@ -71,15 +71,9 @@ const RAPOSA='icons/newton.png';
 const EPIGRAFE=``;
 const EPIGRAFE_FONTE='';
 
-/* ===== guia (ruiva): rosto preservado, só recortado em círculo ===== */
-const G={
- aplaude:{f:'guia/aplaude.png',w:238,h:185,fx:.58,fy:.37,fw:.30},
- estudo:{f:'guia/estudo.png',w:150,h:139,fx:.53,fy:.33,fw:.23},
- calculo:{f:'guia/calculo.png',w:154,h:114,fx:.25,fy:.44,fw:.22},
- ceu:{f:'guia/ceu.png',w:164,h:138,fx:.58,fy:.36,fw:.32},
- nota:{f:'guia/nota.png',w:186,h:142,fx:.51,fy:.41,fw:.34},
- dica:{f:'guia/dica.png',w:124,h:167,fx:.43,fy:.36,fw:.40}
-};
+/* ===== guia (Laura): rosto preservado, só recortado em círculo ===== */
+const G={};
+['aplaude','estudo','calculo','ceu','nota','dica'].forEach(k=>G[k]={f:'guia/laura.png',w:460,h:500,fx:.55,fy:.45,fw:.62});
 function av(k,size){const g=G[k],bw=size*.62/g.fw,bh=bw*g.h/g.w,x=size/2-g.fx*bw,y=size/2-g.fy*bh;
   return`<div class="av" role="img" aria-label="Guia do Xômano Newton" style="width:${size}px;height:${size}px;background-image:url(${g.f});background-size:${bw}px ${bh}px;background-position:${x}px ${y}px"></div>`}
 function figGuia(k,larg){const g=G[k];return`<img class="av-g" src="${g.f}" alt="Guia do Xômano Newton" width="${larg}" style="width:${larg}px;height:auto">`}
